@@ -9,7 +9,7 @@ pipeline {
       } 
      stage('Run Unit Test Cases') {
          steps {
-            bat "mvn clean test" 
+            bat 'mvn clean test'
          }
      } 
      stage('Publish Test Reports') {
