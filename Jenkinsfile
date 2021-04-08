@@ -9,6 +9,7 @@ pipeline {
       } 
      stage('Run Unit Test Cases') {
          steps {
+            bat 'setx PATH "%PATH%;%MAVEN_HOME%\\bin";'
             bat 'mvn clean test'
          }
      } 
