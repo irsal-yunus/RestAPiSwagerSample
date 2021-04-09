@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+       PATH = "%PATH%;%MAVEN_HOME%\\bin"
+    }
     
     stages {
      stage('Checkout Code') {
@@ -8,8 +11,7 @@ pipeline {
          }
       } 
      stage('Run Unit Test Cases') {
-         steps {
-            bat 'setx PATH "%PATH%;%MAVEN_HOME%\\bin"'
+         steps {            
             bat 'mvn clean test'
          }
      } 
