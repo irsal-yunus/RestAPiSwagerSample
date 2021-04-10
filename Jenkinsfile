@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-       PATH = "%PATH%;%MAVEN_HOME%\\bin"
+      PATH = "C:\\WINDOWS\\SYSTEM32"
     }
     
     stages {
@@ -12,7 +12,7 @@ pipeline {
       } 
      stage('Run Unit Test Cases') {
          steps {            
-            bat "mvn.cmd clean test"
+            bat "mvn clean test"
          }
      } 
      stage('Publish Test Reports') {
@@ -22,7 +22,7 @@ pipeline {
      }
      stage('Build Code') {
          steps {
-            bat "mvn.cmd package -DskipTests=true" 
+            bat "mvn package -DskipTests=true" 
          }
      }
      stage('Archieve Result') {
