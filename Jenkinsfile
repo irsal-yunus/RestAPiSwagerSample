@@ -12,7 +12,7 @@ pipeline {
       } 
      stage('Run Unit Test Cases') {
          steps {            
-            bat "mvn clean test"
+            bat "mvn.cmd clean test"
          }
      } 
      stage('Publish Test Reports') {
@@ -22,7 +22,7 @@ pipeline {
      }
      stage('Build Code') {
          steps {
-            bat "mvn package -DskipTests=true" 
+            bat "mvn.cmd package -DskipTests=true" 
          }
      }
      stage('Archieve Result') {
